@@ -57,12 +57,15 @@ development:
 # test:
 #   <<: *default
 #   database: blog_test
+# test:
+#   <<: *default
+#   database: <%= ENV.fetch("PGDATABASE", "blog_test") %>
+#   username: <%= ENV.fetch("PGUSER", "postgres") %>
+#   password: <%= ENV.fetch("PGPASSWORD", "password") %>
+#   host: <%= ENV.fetch("PGHOST", "localhost") %>
 test:
   <<: *default
-  database: <%= ENV.fetch("PGDATABASE", "blog_test") %>
-  username: <%= ENV.fetch("PGUSER", "postgres") %>
-  password: <%= ENV.fetch("PGPASSWORD", "password") %>
-  host: <%= ENV.fetch("PGHOST", "localhost") %>
+  database: <%= ENV["PGDATABASE"] || "blog_test" %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
