@@ -20,11 +20,11 @@
     <% end %>
   </div>
   <div>
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-    <% if form.object.errors[:body].any? %>
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
+    <% if form.object.errors[:content].any? %>
       <div>
-        <%= form.object.errors[:body].join(", ") %>
+        <%= form.object.errors[:content].join(", ") %>
       </div>
     <% end %>
   </div>
