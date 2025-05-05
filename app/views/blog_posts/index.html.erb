@@ -10,4 +10,4 @@
     <p><%= post.content %></p>
   </div>
 <% end %>
-<%== pagy_nav(@pagy) %>
+<%== pagy_nav(@pagy) if  @pagy.count > @pagy.limit %>
