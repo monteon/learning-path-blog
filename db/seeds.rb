@@ -11,3 +11,7 @@ User.find_or_create_by(email: "admin@example.com") do |user|
   user.password = "password"
   user.password_confirmation = "password"
 end
+
+# 100.times do |i|
+#   BlogPost.create title: "Blog Post #{i}", content: "Hello World", published_at: Time.current
+# end
